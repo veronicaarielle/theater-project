@@ -4,59 +4,87 @@
   <meta charset="UTF-8">
   <title>MiraCosta Theater</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Catamaran:200,400,600|Oswald' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(window).scroll(function() {
+if ($(this).scrollTop() > 1){  
+    $('header').addClass("sticky");
+  }
+  else{
+    $('header').removeClass("sticky");
+  }
+});
+</script>
 </head>
 <body>
 
 <div class="container">
 
-  <header class="header-main">
+  <div class="header-main">
 
 
     <div class="pre-header">
       <p class="phoneNumber">P: <a href="tel:555-5555">555-5555</a></p>
       <p class="directions"><a href="#">Get Directions</a></p>
-      <p class="donate"><a href="#">DONATE</a></p>
+      <p class="donate"><a id="donate" href="#">DONATE</a></p>
     </div>
 
-
-    <div class="slider">SLIDER</div>
-    <div class="logo">LOGO</div>
-    <nav class="nav-main">
+    <div id="slider">SLIDER</div>
+    <header id="nav-main">
+    <h1>Miracosta Theatre - Department of Theatre and Film</h1>
+    
+    <nav>
       <ul>
         <li><a href="onstage.html">onstage</a></li>
+        <li class="divider">|</li>
         <li><a href="programs.html">programs</a></li>
+        <li class="divider">|</li>
         <li><a href="academy_academy.html">actors academy</a></li>
+        <li class="divider">|</li>
         <li><a href="faculty.html">faculty</a></li>
+        <li class="divider">|</li>
         <li><a href="alumni.html">alumni</a></li>
       </ul>
     </nav>
   </header>
+  </div>
 
 
   <section class="actors-academy">
     <h2>Discover the Actors Academy</h2>
+    <h5><a href="#">learn more ></a></h5>
   </section>
 
   <section class="mission">
     <h2>We are Commited</h2>
-    <h3>to Artistic Enrichment and Appreciation of the Theatre Arts for All Students</h3>
+    <p>to Artistic Enrichment and Appreciation of the Theatre Arts for All Students</p>
   </section>
 
   <section class="programs-explore">
-    <h2>Explore Progams</h2>
+    <h2 class="h2special">Explore Progams</h2>
+    <div id="programButtons">
+    <div id="theatreProgramButton">
+    <a href="programs.html"><p>THEATRE</p></a>
+    </div>
+    <div id="filmProgramButton">
+    <a href="programs.html"><p>FILM</p></a>
+    </div>
+    </div>
   </section>
 
   <section class="awards">
     <h2>Award winners in excellence</h2>
-    <h4>at the Kennedy Center & American College Theatre Festival</h4>
+    <p>at the Kennedy Center &amp; American College Theatre Festival</p>
   </section>
 
   <section class="facilities">
-    <h2>our new theatre spaces & facilities</h2>
+    <h2 class="h2special">Our New Theatre Spaces &amp; Facilities</h2>
+    <h5><a href="#">learn more ></a></h5>
   </section>
 
   <footer class="footer-main">
-    <nav class="nav-footer">
+    <nav class="footer-quicklinks">
       <ul>
         <li><a href="#">Tickets</a></li>
         <li><a href="#">Donate</a></li>
@@ -67,10 +95,59 @@
         <li><a href="#">Alumni</a></li>
       </ul>
     </nav>
+    <div id="footer-contactinfo">
+    	<p>P: <a href="tel:555-5555">555-5555</a></p>
+        <br>
+        <p><a href="#">Get Directions</a></p>
+        <p>Theatre Address</p>
+        <p>5555 Campus</p>
+        <p>Oceanside, CA 92056</p>
+        <br>
+        <p><a href="mailto:info@email.com">info@email.com</a></p>
+    </div>
+    <div id="googleMaps">
+    </div>
+    <div id="smLinks">
+    <p>Follow Us On:</p>
+    <br>
+    <p id="fbIcon"><a href="facebook.com/miracostatheatre">Miracosta Theatre Facebook Page</a></p>
+    <p id="tIcon"><a href="twitter.com/miracostatheatre">Miracosta Theatre Twitter Page</a></p>
+    <p id="instaIcon"><a href="instagram.com/miracostatheatre">Miracosta Theatre Instagram Page</a></p>
+    </div>
   </footer>
 
 
 </div>
 
+
+
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+$(function(){
+  var prevScroll = 0,
+      curDir = 'down',
+      prevDir = 'up';
+  
+  $(window).scroll(function(){
+    	if($(this).scrollTop() >= prevScroll){
+          curDir = 'down';
+          if(curDir != prevDir){
+          $('#mobileHeader').stop();
+    	  	$('#mobileHeader').animate({ top: '-250px' }, 300);
+          prevDir = curDir;
+          }
+      } else {
+          curDir = 'up';
+          if(curDir != prevDir){
+          $('#mobileHeader').stop();
+          $('#mobileHeader').animate({ top: '0px' }, 300);
+          prevDir = curDir;
+          }
+      }
+      prevScroll = $(this).scrollTop();
+  });
+})
+</script>
 </body>
 </html>
