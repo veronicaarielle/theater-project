@@ -1,9 +1,8 @@
 @import 'compass';
 
+// VARIABLES
 @import "variables/variables";
-@import "vendors/reset";
-@import "base/base";
 
-
-
-@import "pages/main";
+// PARTIALS
+@import "partials/reset";
+@import "partials/header";
